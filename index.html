@@ -29,9 +29,17 @@
     </div>
 
     <div class="actions">
-      <div class="sign">
+      <div class="sign" id="profileMenu">
         <span>Hello, Sign in</span>
         <i class="fas fa-caret-down"></i>
+        <div class="profile-dropdown">
+          <ul>
+            <li><a href="#"><i class="fas fa-user-circle"></i> My Profile</a></li>
+            <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+            <li class="divider"></li>
+            <li><a href="#"><i class="fas fa-sign-out-alt"></i> Sign Out</a></li>
+          </ul>
+        </div>
       </div>
       <div class="save-later">
         <i class="fas fa-star"></i>
@@ -254,9 +262,20 @@
   });
 
   // click anywhere else to close
-  document.addEventListener('click', () => {
-    panel.classList.remove('visible');
+  const profile = document.getElementById('profileMenu');
+  profile.addEventListener('click', e => {
+    e.stopPropagation();
+    const isOpen = profile.classList.toggle('open');
+    profile.setAttribute('aria-expanded', isOpen);
   });
+  // close when clicking outside
+  document.addEventListener('click', () => {
+    if (profile.classList.contains('open')) {
+      profile.classList.remove('open');
+      profile.setAttribute('aria-expanded', 'false');
+    }
+  });
+
 </script>
 </body>
 </html>
