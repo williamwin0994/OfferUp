@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="stylesheet" href="styles.css">
+    <title>OfferUp.com</title>
+</head>
+<body>
+     <header class="primary-header">
+    <div class="logo">
+      <a href="index.html"><img src="images/logo.png" alt="Logo"></a>
+      <div class="map">
+        <i class="fas fa-map-marker-alt"></i>
+        <div>
+          <span>Deliver to</span>
+          <span>Baltimore</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="search">
+      <input type="text" placeholder="Search…">
+      <i class="fas fa-search"></i>
+    </div>
+
+    <div class="actions">
+      <div class="sign">
+        <span>Hello, Sign in</span>
+        <i class="fas fa-caret-down"></i>
+      </div>
+      <div class="save-later">
+        <i class="fas fa-star"></i>
+        <span>Saved Items</span>
+      </div>
+      <div class="cart">
+        <i class="fas fa-shopping-cart"></i>
+        <span>Basket</span>
+        <p>0</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Secondary Navigation -->
+  <nav class="secondary-nav">
+    <div class="menu-toggle">
+      <i class="fas fa-bars"></i>
+      <span>All Jobs</span>
+    </div>
+     <div class="dropdown-menu">
+    <div class="col">
+      <i class="fas fa-bookmark"></i>
+      <h4>Top Categories</h4>
+      <ul>
+        <li>Recommended</li>
+        <li>Saved Jobs</li>
+        <li>Companies</li>
+        <li>Help</li>
+       
+      </ul>
+    </div>
+    
+  </div>
+    <ul class="menu-list">
+      <li>Deals</li>
+      <li>Customer Service</li>
+      <li>Registry</li>
+      <li>About Us</li>
+      <li>Help</li>
+      <li>Jobs</li>
+    </ul>
+  </nav>
+   <div class="jobs-container">
+    <!-- left sidebar: filters -->
+    <aside class="job-filters">
+      <h3>Filters</h3>
+      <div class="filter-group">
+        <label for="filter-location">Location</label>
+        <input id="filter-location" type="text" placeholder="City or ZIP" />
+      </div>
+
+      <div class="filter-group">
+        <h4>Category</h4>
+        <select>
+          <option>All Categories</option>
+          <option>Hospitality</option>
+          <option>Retail</option>
+          <option>Engineering</option>
+          <!-- …etc.… -->
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <h4>Job Type</h4>
+        <label><input type="checkbox" /> Full Time</label><br/>
+        <label><input type="checkbox" /> Part Time</label><br/>
+        <label><input type="checkbox" /> Contract</label>
+      </div>
+      
+      <button class="apply-filters">Apply Filters</button>
+    </aside>
+
+    <!-- main content: list + details -->
+    <div class="job-content">
+      <!-- middle: job list -->
+      <section class="job-list">
+        <article class="job-card">
+          <img src="images/marriott-logo.png" alt="Marriott" />
+          <div>
+            <h4>Guest Environment Expert</h4>
+            <p class="company">Marriott International, Inc</p>
+            <p class="meta">Posted Today • Annapolis Junction, MD</p>
+            <span class="job-type full-time">Full Time</span>
+          </div>
+        </article>
+        <!-- …more .job-card items… -->
+      </section>
+
+      <!-- right: job details -->
+      <section class="job-details">
+        <h2>Guest Environment Expert</h2>
+        <p class="meta">Posted today in Annapolis Junction, MD 20701</p>
+        <span class="job-type full-time">Full Time</span>
+
+        <button class="apply-now"><i class="fas fa-external-link-alt"></i> Apply now</button>
+
+        <hr/>
+
+        <div class="description">
+          <h3>Description</h3>
+          <p>Additional Information Pay: $16.25/hour, Flexible work schedule…</p>
+          <!-- rest of the job detail… -->
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const panel  = document.querySelector('.dropdown-menu');
+
+  toggle.addEventListener('click', e => {
+    e.stopPropagation();            // don’t immediately re-close
+    panel.classList.toggle('visible');
+  });
+
+  // click anywhere else to close
+  document.addEventListener('click', () => {
+    panel.classList.remove('visible');
+  });
+</script>
+</html>
