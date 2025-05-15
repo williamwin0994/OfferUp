@@ -74,41 +74,99 @@
    <div class="jobs-container">
     <!-- left sidebar: filters -->
     <aside class="job-filters">
-      <h3>Filters</h3>
-      <div class="filter-group">
-        <label for="filter-location">Location</label>
-        <input id="filter-location" type="text" placeholder="City or ZIP" />
-      </div>
+  <h3>Filters</h3>
 
-      <div class="filter-group">
-        <h4>Category</h4>
-        <select>
-          <option>All Categories</option>
-          <option>Hospitality</option>
-          <option>Retail</option>
-          <option>Engineering</option>
-          <!-- …etc.… -->
-        </select>
-      </div>
+  <div class="filter-card">
+    <label for="filter-keyword"><i class="fas fa-search"></i> Keyword</label>
+    <input id="filter-keyword" type="text" placeholder="e.g. Front-End" />
+  </div>
 
-      <div class="filter-group">
-        <h4>Job Type</h4>
-        <label><input type="checkbox" /> Full Time</label><br/>
-        <label><input type="checkbox" /> Part Time</label><br/>
-        <label><input type="checkbox" /> Contract</label>
-      </div>
-      
-      <button class="apply-filters">Apply Filters</button>
-    </aside>
+  <div class="filter-card">
+    <label for="filter-location"><i class="fas fa-map-marker-alt"></i> Location</label>
+    <input id="filter-location" type="text" placeholder="City or ZIP" />
+  </div>
+
+  <div class="filter-card">
+    <label for="filter-company"><i class="fas fa-building"></i> Company</label>
+    <input id="filter-company" type="text" placeholder="Company name" />
+  </div>
+
+  <div class="filter-card">
+    <label for="filter-category"><i class="fas fa-list"></i> Category</label>
+    <select id="filter-category">
+      <option>All Categories</option>
+      <option>Hospitality</option>
+      <option>Engineering</option>
+      <!-- …etc.… -->
+    </select>
+  </div>
+
+  <div class="filter-card">
+    <span><i class="fas fa-briefcase"></i> Job Type</span>
+    <div class="checkbox-group">
+      <label><input type="checkbox" /> Full Time</label>
+      <label><input type="checkbox" /> Part Time</label>
+      <label><input type="checkbox" /> Contract</label>
+    </div>
+  </div>
+
+  <div class="filter-card">
+    <span><i class="fas fa-laptop-house"></i> Remote</span>
+    <div class="checkbox-group">
+      <label><input type="checkbox" /> Onsite</label>
+      <label><input type="checkbox" /> Remote</label>
+      <label><input type="checkbox" /> Hybrid</label>
+    </div>
+  </div>
+
+  <div class="filter-card">
+    <label for="filter-posted"><i class="fas fa-clock"></i> Date Posted</label>
+    <select id="filter-posted">
+      <option>Any time</option>
+      <option>Past 24 hours</option>
+      <option>Past week</option>
+      <option>Past month</option>
+    </select>
+  </div>
+
+  <div class="filter-card">
+    <span><i class="fas fa-clipboard-list"></i> Experience</span>
+    <div class="checkbox-group">
+      <label><input type="checkbox" /> Entry</label>
+      <label><input type="checkbox" /> Mid</label>
+      <label><input type="checkbox" /> Senior</label>
+    </div>
+  </div>
+
+  <div class="filter-card">
+    <label><i class="fas fa-dollar-sign"></i> Salary Range</label>
+    <div class="salary-range">
+      <input type="number" placeholder="Min" />
+      <span>–</span>
+      <input type="number" placeholder="Max" />
+    </div>
+  </div>
+
+  <button class="apply-filters">Apply Filters</button>
+</aside>
 
     <!-- main content: list + details -->
     <div class="job-content">
       <!-- middle: job list -->
       <section class="job-list">
         <article class="job-card">
-          <img src="images/marriott-logo.png" alt="Marriott" />
+          <img src="images/marriot.jpg" alt="Marriott" />
           <div>
             <h4>Guest Environment Expert</h4>
+            <p class="company">Marriott International, Inc</p>
+            <p class="meta">Posted Today • Annapolis Junction, MD</p>
+            <span class="job-type full-time">Full Time</span>
+          </div>
+        </article>
+        <article class="job-card">
+          <img src="images/marriot.jpg" alt="Marriott" />
+          <div>
+            <h4>Cook</h4>
             <p class="company">Marriott International, Inc</p>
             <p class="meta">Posted Today • Annapolis Junction, MD</p>
             <span class="job-type full-time">Full Time</span>
