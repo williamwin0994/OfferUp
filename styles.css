@@ -238,8 +238,8 @@ body {
   text-align: center;
 }
 .panel .item img {
-  width: 100%;
-  height: 140px;
+  width: 190px;
+  height: 190px;
   display: block;
   margin-bottom: 6px;
   object-fit: cover;
@@ -793,4 +793,23 @@ body {
     width: 100%;
     text-align: center;
   }
+}
+/* ─── Single-Image Panel (.panel-1) ───────────────────────── */
+/* ─── Make .panel-1 the same card size as .panel ───────────────────────── */
+.panel-1 {
+  max-width: 460px;               /* same width your grid panels use */
+  width: 100%;
+  height: 260px;                  /* tweak this to your desired card height */
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  overflow: hidden;
+  margin: 1rem auto;              /* center it with some vertical spacing */
+}
+
+.panel-1 img {
+  width: 100%;
+  height: 100%;                   /* fill the container */
+  object-fit: cover;              /* crop/scale neatly */
+  display: block;
 }
