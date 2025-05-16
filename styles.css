@@ -580,3 +580,217 @@ body {
   color: #fff;
   outline: none;
 }
+
+/* Job Details Description */
+.job-details .description {
+  margin-bottom: 2rem;           /* space before next section */
+  line-height: 1.6;              /* easier to read paragraphs */
+}
+.job-details .description h3 {
+  margin-bottom: 0.75rem;        /* space under the heading */
+  font-size: 1.25rem;
+  color: var(--text-dark);
+}
+.job-details .description p {
+  margin-bottom: 1.25rem;        /* space between paragraphs */
+}
+
+/* Responsibilities & Qualifications Sections */
+.job-section.responsibilities,
+.job-section.qualifications,
+.job-section-benefits {
+  margin-bottom: 2rem;           /* space between sections */
+}
+.job-section-benefits h3,
+.job-section.responsibilities h3,
+.job-section.qualifications h3 {
+  margin-bottom: 0.75rem;        /* space under section titles */
+  font-size: 1.25rem;
+  color: var(--text-dark);
+}
+.job-section.responsibilities ul,
+.job-section.qualifications ul {
+  list-style: disc inside;       /* indent bullets inside container */
+  padding-left: 1rem;            /* clear left margin */
+}
+.job-section-benefits li,
+.job-section.responsibilities li,
+.job-section.qualifications li {
+  margin-bottom: 0.75rem;        /* space between list items */
+  line-height: 1.6;              /* consistent with body text */
+}
+
+/* ====================================================
+   TABLET (≤1024px)
+   ==================================================== */
+@media (max-width: 1024px) {
+  /* Header: wrap and full-width search/actions */
+  .primary-header {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 0.5rem;
+  }
+  .search {
+    order: 3;
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+  .actions {
+    order: 2;
+    width: 100%;
+    justify-content: space-around;
+  }
+  .logo, .map {
+    order: 1;
+  }
+
+  /* Secondary nav: toggle-only menu */
+  .secondary-nav {
+    flex-wrap: wrap;
+    height: auto;
+  }
+  .menu-toggle {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .menu-list {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  /* Slider shorter */
+  .sec-1 {
+    height: 300px;
+  }
+
+  /* Panels go to two columns */
+  .panels {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  /* Jobs page stacks vertically */
+  .jobs-container {
+    flex-direction: column;
+    height: auto;
+  }
+  .job-filters {
+    width: 100%;
+    order: 3;
+  }
+  .job-list {
+    width: 100%;
+    order: 1;
+    border-right: none;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 1rem;
+  }
+  .job-details {
+    width: 100%;
+    order: 2;
+    padding: 1rem 0.5rem;
+    margin-top: 0;
+  }
+}
+
+/* ====================================================
+   MOBILE (≤768px)
+   ==================================================== */
+@media (max-width: 768px) {
+  /* Header vertical stack */
+  .primary-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .map {
+    margin-top: 0.5rem;
+  }
+  .search {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+  .actions {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 0.5rem;
+  }
+
+  /* Nav hides list */
+  .menu-list {
+    display: none;
+  }
+
+  /* Dropdown single column */
+  .dropdown-menu {
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    grid-template-columns: 1fr;
+  }
+
+  /* Slider very short */
+  .sec-1 {
+    height: 200px;
+  }
+
+  /* Panels single column */
+  .panels {
+    grid-template-columns: 1fr;
+  }
+
+  /* Job cards: vertical */
+  .job-list {
+    padding: 0.5rem;
+    gap: 1rem;
+  }
+  .job-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .job-card img {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Detail sections tighter */
+  .job-details .description,
+  .job-section.responsibilities,
+  .job-section.qualifications {
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+  }
+}
+
+/* ====================================================
+   EXTRA-SMALL PHONE (≤480px)
+   ==================================================== */
+@media (max-width: 480px) {
+  body {
+    font-size: 0.9rem;
+  }
+  .logo img {
+    width: 100px;
+  }
+  .search input {
+    padding: 8px;
+  }
+  .actions .sign,
+  .actions .save-later,
+  .actions .cart {
+    padding: 0.5rem;
+  }
+  .sec-1 {
+    height: 150px;
+  }
+  .panels {
+    gap: 5px;
+    padding: 10px;
+  }
+  /* Make buttons full-width */
+  .apply-filters,
+  .job-details .apply-now {
+    width: 100%;
+    text-align: center;
+  }
+}
