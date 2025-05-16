@@ -698,13 +698,12 @@ body {
    MOBILE (≤768px)
    ==================================================== */
 @media (max-width: 768px) {
-  /* Header vertical stack */
+  /* ── Header: stack vertically ───────────────────────────────── */
   .primary-header {
     flex-direction: column;
     align-items: flex-start;
-  }
-  .map {
-    margin-top: 0.5rem;
+    padding: 0.5rem;
+    height: auto;
   }
   .search {
     width: 100%;
@@ -713,52 +712,92 @@ body {
   .actions {
     width: 100%;
     justify-content: flex-start;
-    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 
-  /* Nav hides list */
-  .menu-list {
-    display: none;
+  /* ── Secondary Nav: always show the menu-list under toggle ─── */
+  .secondary-nav .menu-list {
+    display: flex !important;
+    flex-direction: column;
+    width: 100%;
+    background: #1e2732;
+    margin: 0;
+    padding: 0.5rem 0;
+  }
+  .secondary-nav .menu-list li {
+    margin: 0;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
   }
 
-  /* Dropdown single column */
+  /* ── Dropdown: single column ───────────────────────────────── */
   .dropdown-menu {
+    grid-template-columns: 1fr;
     left: 0;
     right: 0;
     padding: 1rem;
-    grid-template-columns: 1fr;
   }
 
-  /* Slider very short */
+  /* ── Slider: let it size itself ────────────────────────────── */
   .sec-1 {
-    height: 200px;
+    height: auto;
   }
 
-  /* Panels single column */
+  /* ── Panels: one column ────────────────────────────────────── */
   .panels {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
 
-  /* Job cards: vertical */
-  .job-list {
-    padding: 0.5rem;
-    gap: 1rem;
+  /* ── Jobs Page: stack filters, list, and details ─────────── */
+  .jobs-container {
+    flex-direction: column;
+    height: auto !important;
+    overflow: visible;
   }
-  .job-card {
+  .job-filters,
+  .job-list,
+  .job-details {
+    width: 100%;
+    padding: 1rem 0.5rem;
+  }
+  .job-list {
+    border-right: none;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  /* ── Job Cards: vertical layout ───────────────────────────── */
+  .job-list .job-card {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-  .job-card img {
+  .job-list .job-card img {
     margin-bottom: 0.5rem;
   }
 
-  /* Detail sections tighter */
+  /* ── Detail Sections: tighter spacing ──────────────────────── */
   .job-details .description,
   .job-section.responsibilities,
   .job-section.qualifications {
     margin-bottom: 1.5rem;
     padding: 0 0.5rem;
+  }
+
+  /* ── Extra small tweaks ───────────────────────────────────── */
+  body {
+    font-size: 0.9rem;
+  }
+  .logo img {
+    width: 100px;
+  }
+  .search input {
+    padding: 8px;
+  }
+  .actions .sign,
+  .actions .save-later,
+  .actions .cart {
+    padding: 0.5rem;
   }
 }
 
